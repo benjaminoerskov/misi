@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html>
 <h1>Herp derp travel countdowns</h1>
-<h3>Going to Norway at {{norwayTime | date:'MMM d, y, H:mm'}} - Time left: {{foo | async}}</h3>
+<h3>Going to Norway at {{norwayTime | date:'MMM d, y, H:mm'}}{{norwayTimer | async}}</h3>
 <div id="timer">
-  <span id="days"></span>days
-  <span id="hours"></span>hours
-  <span id="minutes"></span>minutes
-  <span id="seconds"></span>seconds
+  <span id="days">{{daysTillNorway}}</span>days
+  <span id="hours">{{hoursTillNorway}}</span>hours
+  <span id="minutes">{{minutesTillNorway}}</span>minutes
+  <span id="seconds">{{secondsTillNorway}}</span>seconds
 </div>
-<h3>Going to Philippines at {{philippinesTime | date:'MMM d, y, H:mm'}} - Time left:</h3>
+<h3>Going to Philippines at {{philippinesTime | date:'MMM d, y, H:mm'}}{{philippinesTimer | async}}</h3>
 <div id="timer">
-  <span id="days"></span>days
-  <span id="hours"></span>hours
-  <span id="minutes"></span>minutes
-  <span id="seconds"></span>seconds
+  <span id="days">{{daysTillPhilippines}}</span>days
+  <span id="hours">{{hoursTillPhilippines}}</span>hours
+  <span id="minutes">{{minutesTillPhilippines}}</span>minutes
+  <span id="seconds">{{secondsTillPhilippines}}</span>seconds
+</div>
+<h3>Going to Greece at {{greeceTime | date:'MMM d, y, H:mm'}}{{greeceTimer | async}}</h3>
+<div id="timer">
+  <span id="days">{{daysTillGreece}}</span>days
+  <span id="hours">{{hoursTillGreece}}</span>hours
+  <span id="minutes">{{minutesTillGreece}}</span>minutes
+  <span id="seconds">{{secondsTillGreece}}</span>seconds
 </div>
 </html>
