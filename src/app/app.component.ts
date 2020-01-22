@@ -11,7 +11,7 @@ import { DateTime } from 'luxon';
 export class AppComponent { 
   norwayTime:DateTime = DateTime.fromObject({year:2020, day:29, month:1, hour:21, minute:40})
   philippinesTime:DateTime = DateTime.fromObject({year:2020, day:26, month:2, hour:8, minute:25})
-  greeceTime:DateTime = DateTime.fromObject({year:2020, day:29, month:4, hour:14, minute:25})
+  greeceTime:DateTime = DateTime.fromObject({year:2020, day:29, month:4, hour:10, minute:35})
 
   daysTillNorway: string;
   hoursTillNorway: string;
