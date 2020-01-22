@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <h1>Herp derp travel countdowns</h1>
-<h3>Going to Norway at {{norwayTime | date:'MMM d, y, H:mm'}} - Time left:</h3>
+<h3>Going to Norway at {{norwayTime | date:'MMM d, y, H:mm'}} - Time left: {{foo | async}}</h3>
 <div id="timer">
   <span id="days"></span>days
   <span id="hours"></span>hours
@@ -15,5 +15,4 @@
   <span id="minutes"></span>minutes
   <span id="seconds"></span>seconds
 </div>
-
 </html>
