@@ -1,16 +1,24 @@
 import { DateTime } from 'luxon';
 import { NestedTimeResult } from '../NestedTimeResult';
 import { TimeResult } from '../TimeResult';
+import { interval } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 
 export class TimeHelpers{
+    getObservable(time:DateTime, name:string){
+      let result:TimeResult;
+      let obs = interval(1000).pipe(map((x) => {
+        result = this.getResultObject(time);
+      }));
 
-    GetNestedResult(time:DateTime){
-        let toReturn:NestedTimeResult = {
-            
-        }
-
-        return toReturn;
+      let toReturn: NestedTimeResult = {
+        Name:name,
+        Result:this.getResultObject(time),
+        Observable:obs
+      }
+console.log(toReturn)
+      return toReturn;
     }
 
 getResultObject(time:DateTime){

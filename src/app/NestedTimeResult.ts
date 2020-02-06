@@ -1,4 +1,5 @@
 import { Observable } from "rxjs";
+import { TimeResult } from './TimeResult';
 
 export interface NestedTimeResult {
     Result: TimeResult;

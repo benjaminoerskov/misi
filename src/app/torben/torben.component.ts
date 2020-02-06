@@ -3,6 +3,7 @@ import { DateTime } from 'luxon';
 import { TimeHelpers } from '../shared/TimeHelpers';
 import { interval } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { TimeResult } from '../TimeResult';
 
 @Component({
   selector: 'app-torben',

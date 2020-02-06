@@ -22,4 +22,13 @@
   <span id="minutes">{{greeceResult?.MinutesLeft}}</span>minutes
   <span id="seconds">{{greeceResult?.SecondsLeft}}</span>seconds
 </div>
+
+<h3>Going to Greece at herpderp: {{greeceTime | date:'MMM d, y, H:mm'}}{{list.Observable | async}}</h3>
+<div id="timer">
+  <span id="days">{{list.Result.DaysLeft}}</span>days
+  <span id="hours">{{list.Result.HoursLeft}}</span>hours
+  <span id="minutes">{{list.Result.MinutesLeft}}</span>minutes
+  <span id="seconds">{{list.Result.SecondsLeft}}</span>seconds
+</div>
+
 </html>
