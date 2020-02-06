@@ -1,6 +1,17 @@
 import { DateTime } from 'luxon';
+import { NestedTimeResult } from '../NestedTimeResult';
+import { TimeResult } from '../TimeResult';
+
 
 export class TimeHelpers{
+
+    GetNestedResult(time:DateTime){
+        let toReturn:NestedTimeResult = {
+            
+        }
+
+        return toReturn;
+    }
 
 getResultObject(time:DateTime){
     let toReturn:TimeResult = {

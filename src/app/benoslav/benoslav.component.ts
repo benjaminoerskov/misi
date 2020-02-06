@@ -3,6 +3,7 @@ import { DateTime } from 'luxon';
 import { interval } from 'rxjs';
 import {map} from 'rxjs/operators';
 import { TimeHelpers } from '../shared/TimeHelpers';
+import { TimeResult } from '../TimeResult';
 
 @Component({
   selector: 'app-benoslav',

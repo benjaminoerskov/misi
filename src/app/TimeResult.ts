@@ -1,4 +1,4 @@
-interface TimeResult {
+export interface TimeResult {
     DaysLeft: string;
     HoursLeft: string;
     MinutesLeft: string;
