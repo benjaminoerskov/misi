@@ -3,8 +3,6 @@ import { DateTime } from 'luxon';
 import { interval } from 'rxjs';
 import {map} from 'rxjs/operators';
 
-
-
 @Component({
   selector: 'app-benoslav',
   templateUrl: './benoslav.component.html',
@@ -15,30 +13,30 @@ export class BenoslavComponent {
   philippinesTime:DateTime = DateTime.fromObject({year:2020, day:26, month:2, hour:8, minute:25})
   greeceTime:DateTime = DateTime.fromObject({year:2020, day:29, month:4, hour:10, minute:35})
 
-  objectAlliance:Object;
-  objectPhilippines:Object;
-  objectGreece:Object;
+  allianceResult:TimeResult;
+  philippinesResult:TimeResult;
+  greeceResult:TimeResult;
 
   allianceTimer = interval(1000).pipe(map((x) => {
-    this.objectAlliance = this.getResultObject(this.allianceTime);
+    this.allianceResult = this.getResultObject(this.allianceTime);
   }));
 
   philippinesTimer = interval(1000).pipe(map((x) => {
-    this.objectPhilippines = this.getResultObject(this.philippinesTime);
+    this.philippinesResult = this.getResultObject(this.philippinesTime);
   }));
 
   greeceTimer = interval(1000).pipe(map((x) => {
-    this.objectGreece = this.getResultObject(this.greeceTime);
+    this.greeceResult = this.getResultObject(this.greeceTime);
   }));
 
-  // Helper methods
   getResultObject(time:DateTime){
-    let toReturn = {};
-    toReturn['DaysLeft'] = this.getDays(time);
-    toReturn['HoursLeft'] = this.getHours(time);
-    toReturn['MinutesLeft'] = this.getMinutes(time);
-    toReturn['SecondsLeft'] = this.getSeconds(time);
-
+    let toReturn:TimeResult = {
+      DaysLeft : this.getDays(time),
+      HoursLeft:this.getHours(time),
+      MinutesLeft : this.getMinutes(time),
+      SecondsLeft:this.getSeconds(time)
+    };
+    
     return toReturn;
   }
 
@@ -57,6 +55,4 @@ export class BenoslavComponent {
   getSeconds(time:DateTime){
     return (time.diffNow().as('seconds')%60).toFixed(0);
   }
-  
-
 }
