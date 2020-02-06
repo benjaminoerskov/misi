@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { TorbenComponent } from './torben/torben.component';
 import { BenoslavComponent } from './benoslav/benoslav.component';
 
-import {MatToolbarModule} from '@angular/material/toolbar'; 
+import { MaterialModule } from './material.module'; // material module imported
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatToolbarModule
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
