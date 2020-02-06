@@ -1,1 +1,11 @@
-<p>Torben er bøzz!</p>
+<!DOCTYPE html>
+<html>
+    <h1>Welcome to Torbens wonderful countdowns</h1>
+    <h3>Going to Greece at {{greeceTime | date:'MMM d, y, H:mm'}}{{greeceTimer | async}}</h3>
+    <div id="timer">
+      <span id="days">{{greeceResult.DaysLeft}}</span>days
+      <span id="hours">{{greeceResult.HoursLeft}}</span>hours
+      <span id="minutes">{{greeceResult.MinutesLeft}}</span>minutes
+      <span id="seconds">{{greeceResult.SecondsLeft}}</span>seconds
+    </div>
+</html>

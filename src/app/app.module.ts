@@ -6,15 +6,19 @@ import { AppComponent } from './app.component';
 import { TorbenComponent } from './torben/torben.component';
 import { BenoslavComponent } from './benoslav/benoslav.component';
 
+import {MatToolbarModule} from '@angular/material/toolbar'; 
+
 @NgModule({
   declarations: [
     AppComponent,
     TorbenComponent,
     BenoslavComponent
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

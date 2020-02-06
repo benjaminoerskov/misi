@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import { interval } from 'rxjs';
-import {map} from 'rxjs/operators';
-import { DateTime } from 'luxon';
 
 @Component({
   selector: 'app-root',

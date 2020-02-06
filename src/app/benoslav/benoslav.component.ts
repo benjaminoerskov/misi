@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DateTime } from 'luxon';
 import { interval } from 'rxjs';
 import {map} from 'rxjs/operators';
+import { TimeHelpers } from '../shared/TimeHelpers';
 
 @Component({
   selector: 'app-benoslav',
@@ -17,42 +18,17 @@ export class BenoslavComponent {
   philippinesResult:TimeResult;
   greeceResult:TimeResult;
 
+  helper:TimeHelpers = new TimeHelpers;
+
   allianceTimer = interval(1000).pipe(map((x) => {
-    this.allianceResult = this.getResultObject(this.allianceTime);
+    this.allianceResult = this.helper.getResultObject(this.allianceTime);
   }));
 
   philippinesTimer = interval(1000).pipe(map((x) => {
-    this.philippinesResult = this.getResultObject(this.philippinesTime);
+    this.philippinesResult = this.helper.getResultObject(this.philippinesTime);
   }));
 
   greeceTimer = interval(1000).pipe(map((x) => {
-    this.greeceResult = this.getResultObject(this.greeceTime);
+    this.greeceResult = this.helper.getResultObject(this.greeceTime);
   }));
-
-  getResultObject(time:DateTime){
-    let toReturn:TimeResult = {
-      DaysLeft : this.getDays(time),
-      HoursLeft:this.getHours(time),
-      MinutesLeft : this.getMinutes(time),
-      SecondsLeft:this.getSeconds(time)
-    };
-    
-    return toReturn;
-  }
-
-  getDays(time:DateTime){
-    return time.diffNow().toFormat('dd');
-  }
-
-  getHours(time:DateTime){
-    return (time.diffNow().as('hours')%24).toFixed(0);
-  }
-
-  getMinutes(time:DateTime){
-    return (time.diffNow().as('minutes')%60).toFixed(0)
-  }
-
-  getSeconds(time:DateTime){
-    return (time.diffNow().as('seconds')%60).toFixed(0);
-  }
 }
