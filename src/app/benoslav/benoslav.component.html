@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<h1>Welcome to Benoslavs wonderful countdowns</h1>
+<h3>Going to Alliance weekend at {{allianceTime | date:'MMM d, y, H:mm'}}{{allianceTimer | async}}</h3>
+<div id="timer">
+  <span id="days">{{objectAlliance.DaysLeft}}</span>days
+  <span id="hours">{{objectAlliance.HoursLeft}}</span>hours
+  <span id="minutes">{{objectAlliance.MinutesLeft}}</span>minutes
+  <span id="seconds">{{objectAlliance.SecondsLeft}}</span>seconds
+</div>
+<h3>Going to Philippines at {{philippinesTime | date:'MMM d, y, H:mm'}}{{philippinesTimer | async}}</h3>
+<div id="timer">
+  <span id="days">{{objectPhilippines.DaysLeft}}</span>days
+  <span id="hours">{{objectPhilippines.HoursLeft}}</span>hours
+  <span id="minutes">{{objectPhilippines.MinutesLeft}}</span>minutes
+  <span id="seconds">{{objectPhilippines.SecondsLeft}}</span>seconds
+</div>
+<h3>Going to Greece at {{greeceTime | date:'MMM d, y, H:mm'}}{{greeceTimer | async}}</h3>
+<div id="timer">
+  <span id="days">{{objectGreece.DaysLeft}}</span>days
+  <span id="hours">{{objectGreece.HoursLeft}}</span>hours
+  <span id="minutes">{{objectGreece.MinutesLeft}}</span>minutes
+  <span id="seconds">{{objectGreece.SecondsLeft}}</span>seconds
+</div>
+</html>
+<router-outlet></router-outlet>
