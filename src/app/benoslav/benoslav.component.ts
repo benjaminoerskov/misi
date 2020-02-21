@@ -10,7 +10,7 @@ import { TimeHelpers } from '../shared/TimeHelpers';
   styleUrls: ['./benoslav.component.css']
 })
 export class BenoslavComponent {
-  allianceTime:DateTime = DateTime.fromObject({year:2020, day:21, month:2, hour:17, minute:0})
+  allianceTime:DateTime = DateTime.fromObject({year:2020, day:21, month:2, hour:17, minute:30})
   philippinesTime:DateTime = DateTime.fromObject({year:2020, day:26, month:2, hour:8, minute:25})
   greeceTime:DateTime = DateTime.fromObject({year:2020, day:29, month:4, hour:10, minute:35})
 
