@@ -7,7 +7,8 @@ getResultObject(time:DateTime){
       DaysLeft : this.getDays(time),
       HoursLeft:this.getHours(time),
       MinutesLeft : this.getMinutes(time),
-      SecondsLeft:this.getSeconds(time)
+      SecondsLeft:this.getSeconds(time),
+      IsExpired:this.getExpired(time)
     };
     
     return toReturn;
@@ -27,5 +28,8 @@ getResultObject(time:DateTime){
 
   getSeconds(time:DateTime){
     return (time.diffNow().as('seconds')%60).toFixed(0);
+  }
+  getExpired(time:DateTime){
+    return time.diffNow().as('seconds') < 0
   }
 }

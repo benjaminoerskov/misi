@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
 <h1>Welcome to Benoslavs wonderful countdowns</h1>
-<h3>DRIKKER BAJER OM</h3>
-<div hidden=true>{{allianceTime | date:'MMM d, y, H:mm'}}{{allianceTimer | async}}</div>
-<div id="timer">
-  <span id="hours">{{allianceResult?.HoursLeft}}</span>TIMER,
-  <span id="minutes">{{allianceResult?.MinutesLeft}}</span>MINUTTER OG
-  <span id="seconds">{{allianceResult?.SecondsLeft}}</span>SEKUNDER
-</div>
-<h3>Going to Philippines at {{philippinesTime | date:'MMM d, y, H:mm'}}{{philippinesTimer | async}}</h3>
-<div id="timer">
+<h3 *ngIf="!philippinesResult?.IsExpired">Going to Philippines at {{philippinesTime | date:'MMM d, y, H:mm'}}{{philippinesTimer | async}}</h3>
+<div id="timer" *ngIf="!philippinesResult?.IsExpired">
   <span id="days">{{philippinesResult?.DaysLeft}}</span>days
   <span id="hours">{{philippinesResult?.HoursLeft}}</span>hours
   <span id="minutes">{{philippinesResult?.MinutesLeft}}</span>minutes
   <span id="seconds">{{philippinesResult?.SecondsLeft}}</span>seconds
 </div>
-<h3>Going to Greece at {{greeceTime | date:'MMM d, y, H:mm'}}{{greeceTimer | async}}</h3>
-<div id="timer">
+<h3 *ngIf="!greeceResult?.IsExpired">Going to Greece at {{greeceTime | date:'MMM d, y, H:mm'}}{{greeceTimer | async}}</h3>
+<div id="timer" *ngIf="!greeceResult?.IsExpired">
   <span id="days">{{greeceResult?.DaysLeft}}</span>days
   <span id="hours">{{greeceResult?.HoursLeft}}</span>hours
   <span id="minutes">{{greeceResult?.MinutesLeft}}</span>minutes
   <span id="seconds">{{greeceResult?.SecondsLeft}}</span>seconds
+</div>
+<h3 *ngIf="!karneResult?.IsExpired">Going to Karneval at {{karneTime | date:'MMM d, y, H:mm'}}{{karneTimer | async}}</h3>
+<div id="timer" *ngIf="!karneResult?.IsExpired">
+  <span id="days">{{karneResult?.DaysLeft}}</span>days
+  <span id="hours">{{karneResult?.HoursLeft}}</span>hours
+  <span id="minutes">{{karneResult?.MinutesLeft}}</span>minutes
+  <span id="seconds">{{karneResult?.SecondsLeft}}</span>seconds
 </div>
 </html>

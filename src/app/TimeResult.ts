@@ -3,4 +3,5 @@ interface TimeResult {
     HoursLeft: string;
     MinutesLeft: string;
     SecondsLeft: string;
+    IsExpired: boolean;
 }

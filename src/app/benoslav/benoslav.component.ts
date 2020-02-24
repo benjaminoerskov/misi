@@ -10,18 +10,18 @@ import { TimeHelpers } from '../shared/TimeHelpers';
   styleUrls: ['./benoslav.component.css']
 })
 export class BenoslavComponent {
-  allianceTime:DateTime = DateTime.fromObject({year:2020, day:21, month:2, hour:17, minute:30})
   philippinesTime:DateTime = DateTime.fromObject({year:2020, day:26, month:2, hour:8, minute:25})
   greeceTime:DateTime = DateTime.fromObject({year:2020, day:29, month:4, hour:10, minute:35})
+  karneTime:DateTime = DateTime.fromObject({year:2020, day:23, month:5, hour:7, minute:0})
 
-  allianceResult:TimeResult;
   philippinesResult:TimeResult;
   greeceResult:TimeResult;
+  karneResult:TimeResult;
 
   helper:TimeHelpers = new TimeHelpers;
 
-  allianceTimer = interval(1000).pipe(map((x) => {
-    this.allianceResult = this.helper.getResultObject(this.allianceTime);
+  karneTimer = interval(1000).pipe(map((x) => {
+    this.karneResult = this.helper.getResultObject(this.karneTime);
   }));
 
   philippinesTimer = interval(1000).pipe(map((x) => {
